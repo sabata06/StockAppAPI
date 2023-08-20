@@ -40,8 +40,6 @@ class UserSerializer(serializers.ModelSerializer):
 from dj_rest_auth.serializers import TokenSerializer
 
 class UserTokenSerializer(TokenSerializer):
-
     user = UserSerializer()
-    
     class Meta(TokenSerializer.Meta):
-        fields = ('token', 'user')
+        fields = ('key', 'user')
